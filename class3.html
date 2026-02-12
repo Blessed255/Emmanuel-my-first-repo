@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Blessed]'s To-Do List</title>
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            background-color: ;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: ;
+            border: 1px solid;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>[Blessed]'s To-Do List</h1>
+        <ul id="todo-list">
+            <!--task will go here-->
+        </ul>
+        <input type="text" id="new-task" placeholder="Add new task">
+        <button id="add-task">Add Task</button>
+    </div>
+
+    <script>
+        const todolist = document.getElementById('todo-list');
+        const newtaskinput = document.getElementById('new-task');
+        const addtaskbutton = document.getElementById('add-task');
+
+        addtaskbutton.addEventListener('click', () => {
+            const newtask = newtaskinput.value;
+            if (newtask !== '') {
+                const taskelement = document.createElement('li');
+                taskelement.textContent = newtask;
+                todolist.appendChild(taskelement);
+                newtaskinput.value = '';
+            }
+        });
+    </script>
+     <script src="script.js"></script>
+
+</body>
+
+</html>
